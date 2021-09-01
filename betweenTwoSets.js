@@ -40,15 +40,15 @@ commonDivider = []
 // }
 
 
-function getTotalX(a,b) {
-    let count = 0
+// function getTotalX(a,b) {
+//     let count = 0
 
-    for(i=1 ; i<= 100; i++)
-        a.every(item => i%item === 0) ? 
-        b.every(item=>item%i ===0) ? count++ : null
-        : null
+//     for(i=1 ; i<= 100; i++)
+//         a.every(item => i%item === 0) ? 
+//         b.every(item=>item%i ===0) ? count++ : null
+//         : null
         
-      return  count
-}
+//       return  count
+// }
 
 getTotalX(a,b)
