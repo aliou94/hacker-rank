@@ -6,31 +6,36 @@
 // 2. find the GCD of all the integers of array B.
 // 3. Count the number of multiples of LCM that evenly divides the GCD.
 
+a = [2,4]
 
-// gcd = a*b/lcm(of a, b)
+b = [16, 32, 96]
 
-
-// echo "# hacker-rank" >> README.md
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/aliou94/hacker-rank.git
-// git push -u origin main
-
-
-
-
-a = [2,6]
-
-b = [24, 36]
+rangeArr = []
+commonFactorArr = []
+commonDivider = []
 
 
 function getTotalX(a,b) {
     
+maxIntA = Math.max(...a)
+minIntB = Math.min(...b)
 
-   
 
+if(maxIntA > minIntB){
+    return 0
+} else {
+
+    for( i = maxIntA; i <= minIntB; i++)  rangeArr.push(i)
+
+    for (i=0; i < rangeArr.length; i++)
+       a.every( (item)=> rangeArr[i] % item === 0) ? commonFactorArr.push(rangeArr[i]):null
+
+    for ( i=0;  i < commonFactorArr.length; i++) 
+      b.every( (item)=> item % commonFactorArr[i] === 0) ? commonDivider.push(commonFactorArr[i]):null
+           
+}
+
+return commonDivider.length
 
 }
 
