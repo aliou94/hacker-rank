@@ -15,28 +15,40 @@ commonFactorArr = []
 commonDivider = []
 
 
-function getTotalX(a,b) {
+// function getTotalX(a,b) {
     
-maxIntA = Math.max(...a)
-minIntB = Math.min(...b)
+// maxIntA = Math.max(...a)
+// minIntB = Math.min(...b)
 
 
-if(maxIntA > minIntB){
-    return 0
-} else {
+// if(maxIntA > minIntB){
+//     return 0
+// } else {
 
-    for( i = maxIntA; i <= minIntB; i++)  rangeArr.push(i)
+//     for( i = maxIntA; i <= minIntB; i++)  rangeArr.push(i)
 
-    for (i=0; i < rangeArr.length; i++)
-       a.every( (item)=> rangeArr[i] % item === 0) ? commonFactorArr.push(rangeArr[i]):null
+//     for (i=0; i < rangeArr.length; i++)
+//        a.every( (item)=> rangeArr[i] % item === 0) ? commonFactorArr.push(rangeArr[i]):null
 
-    for ( i=0;  i < commonFactorArr.length; i++) 
-      b.every( (item)=> item % commonFactorArr[i] === 0) ? commonDivider.push(commonFactorArr[i]):null
+//     for ( i=0;  i < commonFactorArr.length; i++) 
+//       b.every( (item)=> item % commonFactorArr[i] === 0) ? commonDivider.push(commonFactorArr[i]):null
            
-}
+// }
 
-return commonDivider.length
+// return commonDivider.length
 
+// }
+
+
+function getTotalX(a,b) {
+    let count = 0
+
+    for(i=1 ; i<= 100; i++)
+        a.every(item => i%item === 0) ? 
+        b.every(item=>item%i ===0) ? count++ : null
+        : null
+        
+      return  count
 }
 
 getTotalX(a,b)
